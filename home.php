@@ -7,7 +7,7 @@
     header('Location: home.php');
   }
 ?>
-<a href="logout.php" class="btn btn-danger pull-right">Logout</a>
+
 <div class="container">
 <div class="row">
         <div class="col-md-2"></div>
