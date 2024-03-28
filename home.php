@@ -8,89 +8,48 @@
   }
 ?>
 
-<div class="container">
-<div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 ">
-            <div class="panel panel-success">
-                <div class="panel-heading">FRUIT STAND</div>
-                <div class="panel-body">
-                  <form action="insert.php" method="POST" enctype="multipart/form-data">
+<div class="container-fluid mt-3 ">
+  <div class="row gap-4 " style="height:100vh !important;">
+    <div class="col-2 "> <!-- sidebar -->
 
-                    <div class="form-group">
-                      <label>NAME</label>
-                      <input type="text" name="name" class="form-control" required/>
-                    </div>
+    </div> <!-- sidebar -->
 
-                    <div class="form-group">
-                      <label>DESCRIPTION</label>
-                      <textarea name="desc" class="form-control" required></textarea>
-                    </div>
 
-                    <div class="form-group">
-                      <label>PRICE</label>
-                      <input type="number" step="any" name="price" class="form-control" required/>
-                    </div>
+    <div class="col-8 "> <!-- body -->
+      <div class="d-grid gap-4">
 
-                    <div class="form-group">
-                      <label>IMAGE</label>
-                      <input type="file" name="f_image" class="form-control" required/>
-                    </div>
-
-                    <input type="submit" class="btn btn-success"/>
-                  </form>
-                </div>
-            </div>
+        <div class="card w-100" >
+          <img src="https://i0.wp.com/sunrisedaycamp.org/wp-content/uploads/2020/10/placeholder.png?ssl=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
         </div>
-        <div class="col-md-2"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 ">
-            <div class="panel panel-info">
-                <div class="panel-heading">FRUIT STAND</div>
-                <div class="panel-body">
-                
-                  <table class="table">
-                    <thead>
-                      <th>ID</th>
-                      <th>Image</th>
-                      <th>NAME</th>
-                      <th>ACTION</th>
-                    </thead>
-                    <tbody>
-                    <?php
-                      $query = $db->query("SELECT * from fruits_tbl");
-                      while($result = $query->fetch_assoc()):
-                    ?>
-                      <tr>
-                          <td><?= $result['fruit_id']?> </td>
-                          <td><img height="150" src="uploads/<?= $result['fruit_image']?>"/></td>
-                          <td><?= $result['fruit_name']?></td>
-                          <td>
-                          <a href="uploads/<?= $result['fruit_image']?>" download="" class="btn btn-info">DOWNLOAD  IMAGE</a>  
-                          <a href="view.php?id=<?= $result['fruit_id']?>" class="btn btn-info">VIEW</a>
-                            <a href="edit.php?id=<?= $result['fruit_id']?>" class="btn btn-warning">EDIT</a>
-                            <a href="delete.php?id=<?= $result['fruit_id']?>" class="btn btn-danger">DELETE</a>
-                          </td>
-                      </tr>
-                    <?php
-                      endwhile;
-                    ?>
-
-                    </tbody>
-                  </table>
-  
-
-
-
-
-                </div>
-            </div>
+        
+        <div class="card w-100" >
+          <img src="https://i0.wp.com/sunrisedaycamp.org/wp-content/uploads/2020/10/placeholder.png?ssl=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
         </div>
-        <div class="col-md-2"></div>
-    </div>
+
+
+      </div>
+    </div>  <!-- body -->
+    <div class="col-2 "> <!-- left sidebar -->
+      
+    </div> <!-- left -->
+  </div>
 </div>
+
+
+
+
+
+
 <?php
-  include "libraries/footer.php";
+  include "includes/footer.php";
 ?>
