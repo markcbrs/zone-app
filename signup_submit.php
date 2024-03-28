@@ -10,17 +10,16 @@ if(isset($_POST['btnsub'])){
     $birthdate = $_POST['bdate'];
     $username = $_POST['uname'];
     $password = $_POST['pword'];
+    $password = password_hash($password, NULL);
 
-    $query = $db->prepare("INSERT INTO users(fname, lname, email, birth_date, username, passwd ) VALUES ('?','?','?','?','?','?')");
+    $query = $db->prepare("INSERT INTO users(fname, lname, email, birth_date, username, passwd) VALUES (?,?,?,?,?,?)");
 
-    $query->$db->bind_param(1, $fname);
-    $query->$db->bind_param(2, $lname);
-    $query->$db->bind_param(3, $email);
-    $query->$db->bind_param(4, $birthdate);
-    $query->$db->bind_param(5, $username);
-    $query->$db->bind_param(6, $password);
+    $query->bind_param('ssssss', $fname, $lname, $email, $birthdate, $username, $password);
+    
 
     $query->execute();
+    header("Location: login.php");
+    
 
 
     

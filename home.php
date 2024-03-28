@@ -4,7 +4,7 @@
   session_start();
 
   if(!isset($_SESSION['logged_in'])){
-    header('Location: login.php');
+    header('Location: home.php');
   }
 ?>
 <a href="logout.php" class="btn btn-danger pull-right">Logout</a>

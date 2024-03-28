@@ -10,7 +10,7 @@ include "includes/navbar.php";
             <div class="panel panel-info">
                 <div class="panel-heading">Signup</div>
                 <div class="panel-body">
-                    <form action="login_submit.php" method="POST">
+                    <form action="signup_submit.php" method="POST">
                         <div class="form-group">
                             <label>First Name</label>
                             <input type="text" name="ufname" class="form-control" />
@@ -42,6 +42,8 @@ include "includes/navbar.php";
                         </div>
 
                         <input type="submit" name="btnsub" class="btn btn-info"/>
+
+                        <a href="login.php">Already have account? Log in here</a>
                     </form>
                 </div>
             </div>

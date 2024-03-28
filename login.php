@@ -3,7 +3,7 @@ include "includes/navbar.php";
 
 session_start();
 
-if(isset($_SESSION['logged_in']) == TRUE){
+if(isset($_SESSION['logged_in'])){
     header('Location: home.php');
   }
 
@@ -15,7 +15,7 @@ if(isset($_SESSION['logged_in']) == TRUE){
         </div>
         <div class="col-md-6 ">
             <div class="panel panel-info">
-                <div class="panel-heading">LOGIN FORM</div>
+                <div class="panel-heading">LOGIN</div>
                 <div class="panel-body">
                     <form action="login_submit.php" method="POST">
                         <div class="form-group">
@@ -27,7 +27,10 @@ if(isset($_SESSION['logged_in']) == TRUE){
                             <label>PASSWORD</label>
                             <input type="password" name="pword" class="form-control"/>
                         </div>
+
                         <input type="submit" name="btnsub" class="btn btn-info"/>
+
+                        <a href="signup.php">Don't have account yet? Register here</a>
                     </form>
                 </div>
             </div>
